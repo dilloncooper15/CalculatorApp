@@ -19,6 +19,7 @@ Button Mapping:
     - "-" -> Subtraction
     - "*" -> Multiplication
     - "/" -> Division
+
 Fields:
   - Operation field (TextView):
     - Is not editable and reflects the last operation the user selected.
