@@ -1,30 +1,30 @@
 # CalculatorApp
 
 Button Mapping:
-  Numbers/ Decimal: 
-    "0": 0
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": 8
-    "9": 9
-    ".": Decimal
-  Operations: 
-    "=" -> Eqauls
-    "+" -> Addition
-    "-" -> Subtraction
-    "*" -> Multiplication
-    "/" -> Division
+  - Numbers/ Decimal: 
+    - "0": 0
+    - "1": 1
+    - "2": 2
+    - "3": 3
+    - "4": 4
+    - "5": 5
+    - "6": 6
+    - "7": 7
+    - "8": 8
+    - "9": 9
+    - ".": Decimal
+  - Operations: 
+    - "=" -> Eqauls
+    - "+" -> Addition
+    - "-" -> Subtraction
+    - "*" -> Multiplication
+    - "/" -> Division
 Fields:
-  Operation field (TextView):
+  - Operation field (TextView):
     - Is not editable and reflects the last operation the user selected.
-  Enter Number field (EditText):
+  - Enter Number field (EditText):
     - Is editable and reflects the numbers the user selects. This field only allows one decimal to be entered.
-  Result field (EditText):
+  - Result field (EditText):
     - Is not editable and reflects the result of the number(s) entered within the Enter Number field.
 
 User Input:
