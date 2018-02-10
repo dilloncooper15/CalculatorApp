@@ -14,11 +14,11 @@ Button Mapping:
     - "9": 9
     - ".": Decimal
   - Operations: 
-    - "=" -> Eqauls
-    - "+" -> Addition
-    - "-" -> Subtraction
-    - "*" -> Multiplication
-    - "/" -> Division
+    - "=": Eqauls
+    - "+": Addition
+    - "-": Subtraction
+    - "*": Multiplication
+    - "/": Division
 Fields:
   - Operation field (TextView):
     - Is not editable and reflects the last operation the user selected.
