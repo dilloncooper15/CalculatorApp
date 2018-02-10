@@ -2,23 +2,23 @@
 
 Button Mapping:
   - Numbers/ Decimal: 
-    - "0": 0
-    - "1": 1
-    - "2": 2
-    - "3": 3
-    - "4": 4
-    - "5": 5
-    - "6": 6
-    - "7": 7
-    - "8": 8
-    - "9": 9
-    - ".": Decimal
+    - "0" -> 0
+    - "1" -> 1
+    - "2" -> 2
+    - "3" -> 3
+    - "4" -> 4
+    - "5" -> 5
+    - "6" -> 6
+    - "7" -> 7
+    - "8" -> 8
+    - "9" -> 9
+    - "." -> Decimal
   - Operations: 
-    - "=": Eqauls
-    - "+": Addition
-    - "-": Subtraction
-    - "*": Multiplication
-    - "/": Division
+    - "=" -> Eqauls
+    - "+" -> Addition
+    - "-" -> Subtraction
+    - "*" -> Multiplication
+    - "/" -> Division
 Fields:
   - Operation field (TextView):
     - Is not editable and reflects the last operation the user selected.
