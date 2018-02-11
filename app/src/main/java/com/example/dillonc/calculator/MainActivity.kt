@@ -14,9 +14,6 @@ private const val STATE_OPERAND1 = "Operand1"
 private const val STATE_OPERAND1_STORED = "Operand1_Stored"
 
 class MainActivity : AppCompatActivity() {
-//    private lateinit var result: EditText  // NOTE: Since we cannot set EditText = null, use a lateinit
-//    private lateinit var newEntryNumber: EditText
-//    private val displayOperation by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.operation) }  // Thread safety disabled
 
     // Variables to hold the operands and type of calculation
     private var operand1: Double? = null
@@ -30,45 +27,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        result = findViewById(R.id.result)
-//        newEntryNumber = findViewById(R.id.newEntryNumber)
-//
-//        // Data input buttons
-//        val button0: Button = findViewById(R.id.button0)
-//        val button1: Button = findViewById(R.id.button1)
-//        val button2: Button = findViewById(R.id.button2)
-//        val button3: Button = findViewById(R.id.button3)
-//        val button4: Button = findViewById(R.id.button4)
-//        val button5: Button = findViewById(R.id.button5)
-//        val button6: Button = findViewById(R.id.button6)
-//        val button7: Button = findViewById(R.id.button7)
-//        val button8: Button = findViewById(R.id.button8)
-//        val button9: Button = findViewById(R.id.button9)
-//        val buttonDecimal: Button = findViewById(R.id.buttonDecimal)
-//
-//        // Operation buttons
-//        val buttonEquals = findViewById<Button>(R.id.buttonEquals)
-//        val buttonDivide = findViewById<Button>(R.id.buttonDivide)
-//        val buttonMultiply = findViewById<Button>(R.id.buttonMultiply)
-//        val buttonMinus = findViewById<Button>(R.id.buttonMinus)
-//        val buttonAdd = findViewById<Button>(R.id.buttonAdd)
-//        val buttonClear = findViewById<Button>(R.id.buttonClear)
-
         // listener reads caption of the button that is clicked and appends it to any text already existing in newEntryNumber field.
         // When a button is tapped and Android calls the onClick method, it passes in a reference to the button that was tapped.
         // Since all widgets are views, so any widget that is tapped can be passed as a parameter to click as an instance of its base class (View).
         // Since not all views have text, so before referring to the text property, we have to cast b as a widget that does have a text property.
+
+        // Number and Decimal Buttons
+        val buttonArray = arrayOf(button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonDecimal)
+
         val listener = View.OnClickListener { v ->
             val b = v as Button
             newEntryNumber.append(b.text)
         }
 
-        val buttonArray = arrayOf(button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonDecimal)
-        val operationArray = arrayOf(buttonEquals, buttonDivide, buttonMultiply, buttonMinus, buttonAdd)
-
         for (i in buttonArray) {
             i.setOnClickListener(listener)
         }
+
+        // Operation Buttons
+        val operationArray = arrayOf(buttonEquals, buttonDivide, buttonMultiply, buttonMinus, buttonAdd)
 
         val opListener = View.OnClickListener { v ->
             val op = (v as Button).text.toString()
@@ -85,6 +62,37 @@ class MainActivity : AppCompatActivity() {
         for (i in operationArray) {
             i.setOnClickListener(opListener)
         }
+
+        // Negative Button
+        buttonNeg.setOnClickListener({ view ->
+            val value = newEntryNumber.text.toString()
+            if (value.isEmpty()) {
+                newEntryNumber.setText("-")
+            } else {
+                try {
+                    var doubleValue = value.toDouble()
+                    doubleValue *= -1
+                    newEntryNumber.setText(doubleValue.toString())
+
+                } catch (e: NumberFormatException) {
+                    // newEntryNumber was "-" or ".", so clear it
+                    newEntryNumber.setText("")
+                }
+            }
+        })
+
+        // Clear Button
+        buttonClear.setOnClickListener({ view ->
+            val clearValue = newEntryNumber.text.toString()
+            if (clearValue.isEmpty()) {
+                result.setText("")
+                operand1 = null
+                toast("All fields cleared")
+            } else {
+                newEntryNumber.setText("")
+                operand2 = 0.0
+            }
+        })
     }
 
     private fun performOperation(value: Double, operation: String) {
