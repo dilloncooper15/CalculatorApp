@@ -16,4 +16,5 @@
     <string name="_subtraction">-</string>
     <string name="_equals">=</string>
     <string name="_multiplication">*</string>
+    <string name="clear">Clear</string>
 </resources>

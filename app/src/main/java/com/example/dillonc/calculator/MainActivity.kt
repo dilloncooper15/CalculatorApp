@@ -5,18 +5,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+
+import kotlinx.android.synthetic.main.activity_main.*
 
 private const val STATE_PENDING_OPERATION = "PendingOperation"
 private const val STATE_OPERAND1 = "Operand1"
 private const val STATE_OPERAND1_STORED = "Operand1_Stored"
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var result: EditText  // NOTE: Since we cannot set EditText = null, use a lateinit
-    private lateinit var newEntryNumber: EditText
-    private val displayOperation by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.operation) }  // Thread safety disabled
+//    private lateinit var result: EditText  // NOTE: Since we cannot set EditText = null, use a lateinit
+//    private lateinit var newEntryNumber: EditText
+//    private val displayOperation by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.operation) }  // Thread safety disabled
 
     // Variables to hold the operands and type of calculation
     private var operand1: Double? = null
@@ -30,31 +30,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        result = findViewById(R.id.result)
-        newEntryNumber = findViewById(R.id.newEntryNumber)
+//        result = findViewById(R.id.result)
+//        newEntryNumber = findViewById(R.id.newEntryNumber)
+//
+//        // Data input buttons
+//        val button0: Button = findViewById(R.id.button0)
+//        val button1: Button = findViewById(R.id.button1)
+//        val button2: Button = findViewById(R.id.button2)
+//        val button3: Button = findViewById(R.id.button3)
+//        val button4: Button = findViewById(R.id.button4)
+//        val button5: Button = findViewById(R.id.button5)
+//        val button6: Button = findViewById(R.id.button6)
+//        val button7: Button = findViewById(R.id.button7)
+//        val button8: Button = findViewById(R.id.button8)
+//        val button9: Button = findViewById(R.id.button9)
+//        val buttonDecimal: Button = findViewById(R.id.buttonDecimal)
+//
+//        // Operation buttons
+//        val buttonEquals = findViewById<Button>(R.id.buttonEquals)
+//        val buttonDivide = findViewById<Button>(R.id.buttonDivide)
+//        val buttonMultiply = findViewById<Button>(R.id.buttonMultiply)
+//        val buttonMinus = findViewById<Button>(R.id.buttonMinus)
+//        val buttonAdd = findViewById<Button>(R.id.buttonAdd)
+//        val buttonClear = findViewById<Button>(R.id.buttonClear)
 
-        // Data input buttons
-        val button0: Button = findViewById(R.id.button0)
-        val button1: Button = findViewById(R.id.button1)
-        val button2: Button = findViewById(R.id.button2)
-        val button3: Button = findViewById(R.id.button3)
-        val button4: Button = findViewById(R.id.button4)
-        val button5: Button = findViewById(R.id.button5)
-        val button6: Button = findViewById(R.id.button6)
-        val button7: Button = findViewById(R.id.button7)
-        val button8: Button = findViewById(R.id.button8)
-        val button9: Button = findViewById(R.id.button9)
-        val buttonDecimal: Button = findViewById(R.id.buttonDecimal)
-
-        // Operation buttons
-        val buttonEquals = findViewById<Button>(R.id.buttonEquals)
-        val buttonDivide = findViewById<Button>(R.id.buttonDivide)
-        val buttonMultiply = findViewById<Button>(R.id.buttonMultiply)
-        val buttonMinus = findViewById<Button>(R.id.buttonMinus)
-        val buttonAdd = findViewById<Button>(R.id.buttonAdd)
-        val buttonClear = findViewById<Button>(R.id.buttonClear)
-
-
+        // listener reads caption of the button that is clicked and appends it to any text already existing in newEntryNumber field.
+        // When a button is tapped and Android calls the onClick method, it passes in a reference to the button that was tapped.
+        // Since all widgets are views, so any widget that is tapped can be passed as a parameter to click as an instance of its base class (View).
+        // Since not all views have text, so before referring to the text property, we have to cast b as a widget that does have a text property.
         val listener = View.OnClickListener { v ->
             val b = v as Button
             newEntryNumber.append(b.text)
@@ -76,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 newEntryNumber.setText("")
             }
             pendingOperation = op
-            displayOperation.text = pendingOperation
+            operation.text = pendingOperation
         }
 
         for (i in operationArray) {
@@ -131,6 +134,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         pendingOperation = savedInstanceState.getString(STATE_PENDING_OPERATION)
-        displayOperation.text = pendingOperation
+        operation.text = pendingOperation
     }
 }
