@@ -1,10 +1,15 @@
 package com.example.dillonc.calculator
 
 import android.content.Context
+import android.database.Cursor
+import android.inputmethodservice.KeyboardView
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
+import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
+import android.widget.CursorAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,7 +41,9 @@ class MainActivity : AppCompatActivity() {
 
         val listener = View.OnClickListener { v ->
             val b = v as Button
+//            newEntryNumber.append(b.text, newEntryNumber.getSelectionStart(), newEntryNumber.getSelectionEnd())
             newEntryNumber.append(b.text)
+            //todo: After the user moves the cursor, have the numbers append to the current cursor's position and not the end of the string.
         }
 
         for (i in buttonArray) {
@@ -114,6 +121,29 @@ class MainActivity : AppCompatActivity() {
 
         // Tan Button
 
+        // Scroll Button
+//        buttonLeft.setOnClickListener({ view ->
+//            newEntryNumber.setSelection(Cursor.FIELD_TYPE_STRING.)
+//        })
+
+        // Scroll Button
+        buttonRight.setOnClickListener({ _ ->
+            val value = newEntryNumber.text.toString()
+            if (value.length != newEntryNumber.selectionStart) {
+                val cursorPosition = newEntryNumber.selectionStart
+                newEntryNumber.setSelection(cursorPosition + 1)
+            }
+        })
+
+        buttonLeft.setOnClickListener({ _ ->
+            val value = newEntryNumber.text.toString()
+            if (value.isNotEmpty()) {
+                if (newEntryNumber.selectionStart != 0) {
+                    val cursorPosition = newEntryNumber.selectionStart
+                    newEntryNumber.setSelection(cursorPosition - 1)
+                }
+            }
+        })
     }
 
     private fun performOperation(value: Double, operation: String) {
@@ -145,24 +175,24 @@ class MainActivity : AppCompatActivity() {
         newEntryNumber.setText("")
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        if (operand1 != null) {
-            outState.putDouble(STATE_OPERAND1, operand1!!)
-            outState.putBoolean(STATE_OPERAND1_STORED, true)
-        }
-        outState.putString(STATE_PENDING_OPERATION, pendingOperation)
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        operand1 = if (savedInstanceState.getBoolean(STATE_OPERAND1_STORED, false)) {
-            savedInstanceState.getDouble(STATE_OPERAND1)
-        } else {
-            null
-        }
-
-        pendingOperation = savedInstanceState.getString(STATE_PENDING_OPERATION)
-        operation.text = pendingOperation
-    }
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//        if (operand1 != null) {
+//            outState.putDouble(STATE_OPERAND1, operand1!!)
+//            outState.putBoolean(STATE_OPERAND1_STORED, true)
+//        }
+//        outState.putString(STATE_PENDING_OPERATION, pendingOperation)
+//    }
+//
+//    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+//        super.onRestoreInstanceState(savedInstanceState)
+//        operand1 = if (savedInstanceState.getBoolean(STATE_OPERAND1_STORED, false)) {
+//            savedInstanceState.getDouble(STATE_OPERAND1)
+//        } else {
+//            null
+//        }
+//
+//        pendingOperation = savedInstanceState.getString(STATE_PENDING_OPERATION)
+//        operation.text = pendingOperation
+//    }
 }

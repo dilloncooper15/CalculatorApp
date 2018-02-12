@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/transparent"
-        android:cursorVisible="false"
+        android:cursorVisible="true"
         android:elevation="1dp"
         android:ems="10"
         android:textColor="@color/colorPrimary"
@@ -87,11 +87,12 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_2"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="@+id/button5" />
+        app:layout_constraintEnd_toStartOf="@+id/button3" />
 
     <Button
         android:id="@+id/button3"
@@ -119,11 +120,12 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_5"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="@+id/button8" />
+        app:layout_constraintEnd_toStartOf="@+id/button6" />
 
     <Button
         android:id="@+id/button6"
@@ -221,11 +223,12 @@
         android:id="@+id/buttonDecimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/black"
         android:text="@string/decimal"
+        android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonEquals"
-        app:layout_constraintEnd_toEndOf="@+id/button2" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonEquals" />
 
     <Button
         android:id="@+id/buttonEquals"
@@ -250,13 +253,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="@string/clear"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNeg" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/button1" />
 
     <Button
         android:id="@+id/buttonNeg"
@@ -275,13 +277,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="@string/c_op"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="10sp"
-        app:layout_constraintEnd_toStartOf="@+id/button0"
-        app:layout_constraintTop_toBottomOf="@+id/buttonClear" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/button0"
+        app:layout_constraintEnd_toStartOf="@+id/button0" />
 
     <Button
         android:id="@+id/buttonCos"
@@ -318,5 +319,25 @@
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonMinus"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
+
+    <Button
+        android:id="@+id/buttonLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="@string/lt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonAdd"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd" />
+
+    <Button
+        android:id="@+id/buttonRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="@string/rt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonLeft"
+        app:layout_constraintStart_toEndOf="@+id/buttonLeft" />
 
 </android.support.constraint.ConstraintLayout>

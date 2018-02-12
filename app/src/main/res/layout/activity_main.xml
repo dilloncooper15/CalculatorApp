@@ -40,7 +40,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@android:color/transparent"
-        android:cursorVisible="false"
+        android:cursorVisible="true"
         android:elevation="1dp"
         android:ems="10"
         android:inputType="numberSigned|numberDecimal"
@@ -74,7 +74,8 @@
         android:text="@string/_0"
         android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/buttonDecimal" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonDecimal"
+        app:layout_constraintStart_toStartOf="@+id/button1" />
 
     <Button
         android:id="@+id/button1"
@@ -85,7 +86,8 @@
         android:text="@string/_1"
         android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2" />
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button4" />
 
     <Button
         android:id="@+id/button2"
@@ -118,7 +120,8 @@
         android:text="@string/_4"
         android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/button5" />
+        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="@+id/button7" />
 
     <Button
         android:id="@+id/button5"
@@ -298,7 +301,8 @@
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonSin"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSin" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonSin"
+        app:layout_constraintStart_toStartOf="@+id/button0" />
 
     <Button
         android:id="@+id/buttonSin"
@@ -310,7 +314,8 @@
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonTan"
-        app:layout_constraintEnd_toStartOf="@+id/buttonTan" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonTan"
+        app:layout_constraintStart_toStartOf="@+id/buttonDecimal" />
 
     <Button
         android:id="@+id/buttonTan"
@@ -323,5 +328,26 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/buttonEquals"
         app:layout_constraintTop_toBottomOf="@+id/buttonEquals" />
+
+    <Button
+        android:id="@+id/buttonLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="@string/lt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTan"
+        app:layout_constraintStart_toEndOf="@+id/buttonTan" />
+
+    <Button
+        android:id="@+id/buttonRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="@string/rt"
+        android:nextFocusRight="@id/newEntryNumber"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonLeft"
+        app:layout_constraintStart_toEndOf="@+id/buttonLeft" />
 
 </android.support.constraint.ConstraintLayout>
