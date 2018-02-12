@@ -53,5 +53,5 @@ Clear Functionality:
 
 SDK Info:
   - Compile SDK Version = 26
-  - Min SDK Version = 17
+  - Min SDK Version = 22
   - Target SDK Version = 26
