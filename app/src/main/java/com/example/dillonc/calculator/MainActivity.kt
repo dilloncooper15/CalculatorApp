@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             val b = v as Button
 //            newEntryNumber.append(b.text, newEntryNumber.getSelectionStart(), newEntryNumber.getSelectionEnd())
             newEntryNumber.append(b.text)
-            //todo: After the user moves the cursor, have the numbers append to the current cursor's position and not the end of the string.
+            //todo: After the user moves the cursor, have the numbers append to the current cursor's position and not the end of the string
         }
 
         for (i in buttonArray) {
