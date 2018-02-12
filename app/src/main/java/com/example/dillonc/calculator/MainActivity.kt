@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val STATE_PENDING_OPERATION = "PendingOperation"
@@ -75,8 +74,7 @@ class MainActivity : AppCompatActivity() {
                     newEntryNumber.setText(doubleValue.toString())
 
                 } catch (e: NumberFormatException) {
-                    // newEntryNumber was "-" or ".", so clear it
-                    newEntryNumber.setText("")
+                    newEntryNumber.setText("")  // newEntryNumber was "-" or ".", so clear it
                 }
             }
         })
@@ -89,26 +87,23 @@ class MainActivity : AppCompatActivity() {
                 operation.text = ""
                 operand1 = null
                 pendingOperation = ""
-
                 toast("All fields cleared")
             } else {
                 newEntryNumber.setText("")
                 operand2 = 0.0
-//                toast("bll")
             }
         })
 
         // Clear Operation Only Button
-//        buttonClearOp.setOnClickListener({ view ->
-//            //            val clearOperationField = pendingOperation
-//            when {
-//                pendingOperation.isNotEmpty() -> {
-//                    pendingOperation = ""
-//                    operation.setText("")
-//                    toast("aa")
-//                }
-//            }
-//        })
+        buttonClearOp.setOnClickListener({ view ->
+            when {
+                pendingOperation.isNotEmpty() -> {
+                    pendingOperation = "="
+                    operation.text = ""
+                    toast("Pending operation cleared")
+                }
+            }
+        })
 
         // Cos Button
 
