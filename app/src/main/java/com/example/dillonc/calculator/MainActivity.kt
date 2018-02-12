@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 newEntryNumber.setText("")
                 operand2 = 0.0
-                toast("bll")
+//                toast("bll")
             }
         })
 
