@@ -16,6 +16,10 @@
     <string name="_subtraction">-</string>
     <string name="_equals">=</string>
     <string name="_multiplication">*</string>
-    <string name="clear">Clear</string>
+    <string name="clear">Clr</string>
     <string name="neg">Neg</string>
+    <string name="tan">Tan</string>
+    <string name="sin">Sin</string>
+    <string name="cos">Cos</string>
+    <string name="c_op">C/Op</string>
 </resources>

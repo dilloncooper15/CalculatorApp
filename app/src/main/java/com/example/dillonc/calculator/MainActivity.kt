@@ -86,13 +86,39 @@ class MainActivity : AppCompatActivity() {
             val clearValue = newEntryNumber.text.toString()
             if (clearValue.isEmpty()) {
                 result.setText("")
+                operation.text = ""
                 operand1 = null
+                pendingOperation = ""
+
                 toast("All fields cleared")
             } else {
                 newEntryNumber.setText("")
                 operand2 = 0.0
+                toast("bll")
             }
         })
+
+        // Clear Operation Only Button
+//        buttonClearOp.setOnClickListener({ view ->
+//            //            val clearOperationField = pendingOperation
+//            when {
+//                pendingOperation.isNotEmpty() -> {
+//                    pendingOperation = ""
+//                    operation.setText("")
+//                    toast("aa")
+//                }
+//            }
+//        })
+
+        // Cos Button
+
+        // Sine Button
+//        buttonSin.setOnClickListener({ view ->
+//            val sinValue = newEntryNumber.text.toString()
+//        })
+
+        // Tan Button
+
     }
 
     private fun performOperation(value: Double, operation: String) {
