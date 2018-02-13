@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         val listener = View.OnClickListener { v ->
             val b = v as Button
-//            newEntryNumber.append(b.text, newEntryNumber.getSelectionStart(), newEntryNumber.getSelectionEnd())
             newEntryNumber.append(b.text)
+//            newEntryNumber.append(b.text, newEntryNumber.getSelectionStart(), newEntryNumber.getSelectionEnd())
             //todo: After the user moves the cursor, have the numbers append to the current cursor's position and not the end of the string
         }
 
@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
         // Operation Buttons
         val operationArray = arrayOf(buttonEquals, buttonDivide, buttonMultiply, buttonMinus, buttonAdd)
 
-        val opListener = View.OnClickListener { v ->
-            val op = (v as Button).text.toString()
+        val opListener = View.OnClickListener { it ->
+            val op = (it as Button).text.toString()
             try {
                 val value = newEntryNumber.text.toString().toDouble()
                 performOperation(value, op)
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Negative Button
-        buttonNeg.setOnClickListener({ view ->
+        buttonNeg.setOnClickListener({ _ ->
             val value = newEntryNumber.text.toString()
             if (value.isEmpty()) {
                 newEntryNumber.setText("-")
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         // Clear Button
-        buttonClear.setOnClickListener({ view ->
+        buttonClear.setOnClickListener({ _ ->
             val clearValue = newEntryNumber.text.toString()
             if (clearValue.isEmpty()) {
                 result.setText("")
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         // Clear Operation Only Button
-        buttonClearOp.setOnClickListener({ view ->
+        buttonClearOp.setOnClickListener({ _ ->
             when {
                 pendingOperation.isNotEmpty() -> {
                     pendingOperation = "="

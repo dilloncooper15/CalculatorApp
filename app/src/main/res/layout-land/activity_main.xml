@@ -20,13 +20,13 @@
         android:ems="10"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
         android:inputType="numberSigned|numberDecimal"
         android:labelFor="@id/result"
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,10 +39,10 @@
         android:cursorVisible="true"
         android:elevation="1dp"
         android:ems="10"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
         android:inputType="numberSigned|numberDecimal"
         android:labelFor="@id/newEntryNumber"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/result"
         app:layout_constraintEnd_toStartOf="@+id/guideline" />
 
@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:textSize="28sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/button7"
         app:layout_constraintEnd_toStartOf="@+id/button7"
@@ -67,8 +67,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_0"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonDecimal"
         app:layout_constraintEnd_toStartOf="@+id/buttonDecimal" />
 
@@ -78,8 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_1"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/button2" />
 
@@ -100,8 +100,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_3"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintStart_toStartOf="@+id/button6"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
@@ -111,8 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_4"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button5"
         app:layout_constraintEnd_toStartOf="@+id/button5" />
 
@@ -133,8 +133,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_6"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintStart_toStartOf="@+id/button9"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
 
@@ -144,9 +144,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_7"
         android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button8"
         app:layout_constraintEnd_toStartOf="@+id/button8" />
 
@@ -156,8 +156,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_8"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button9"
         app:layout_constraintEnd_toStartOf="@+id/button9" />
 
@@ -169,8 +169,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:textColor="@android:color/holo_blue_dark"
         android:text="@string/_9"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result" />
@@ -181,8 +181,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
-        android:textColor="@color/colorPrimaryDark"
         android:text="@string/_division"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button9"
         app:layout_constraintStart_toEndOf="@+id/button9" />
 
@@ -192,8 +192,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
-        android:textColor="@color/colorPrimaryDark"
         android:text="@string/_multiplication"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button6"
         app:layout_constraintStart_toEndOf="@+id/button6" />
 
@@ -203,8 +203,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
-        android:textColor="@color/colorPrimaryDark"
         android:text="@string/_subtraction"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintStart_toEndOf="@+id/button3" />
 
@@ -214,8 +214,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
-        android:textColor="@color/colorPrimaryDark"
         android:text="@string/_addition"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonEquals"
         app:layout_constraintStart_toEndOf="@+id/buttonEquals" />
 
@@ -236,8 +236,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:textColor="@color/colorPrimaryDark"
         android:text="@string/_equals"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 

@@ -345,8 +345,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
-        android:text="@string/rt"
         android:nextFocusRight="@id/newEntryNumber"
+        android:text="@string/rt"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonLeft"
         app:layout_constraintStart_toEndOf="@+id/buttonLeft" />
 
